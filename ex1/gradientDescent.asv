@@ -44,5 +44,5 @@ for iter = 1:num_iters
     J_history(iter) = computeCost(X, y, theta);
 
 end
-theta = [theta(1) ; theta(2)];
+theta = [theta(1) ; theta(
 end
