@@ -6,7 +6,9 @@ function [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
-
+n = length(theta);
+ temp = zeros(n,1);
+    
 for iter = 1:num_iters
 
     % ====================== YOUR CODE HERE ======================
@@ -17,13 +19,25 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
+hyp = X * theta; 
+    for l=1:n
+       
+        for i=1:m
+            temp(l,1) = temp(l,1) + ((hyp(i) - y(i)) * X(i,l));
+        end
+        
+        temp(l,1) = temp(l,1)/m;
+    
+   
+        temp(l,1) = theta(l,1) - alpha * temp(l,1);
+    
 
 
 
+    end
 
 
-
-
+    theta = temp;
 
 
 

@@ -1,3 +1,4 @@
+
 %% Machine Learning Online Class - Exercise 1: Linear Regression
 
 %  Instructions
@@ -27,13 +28,13 @@
 clear ; close all; clc
 % 
 % %% ==================== Part 1: Basic Function ====================
-% % Complete warmUpExercise.m
-% fprintf('Running warmUpExercise ... \n');
-% fprintf('5x5 Identity Matrix: \n');
-% warmUpExercise()
-% 
-% fprintf('Program paused. Press enter to continue.\n');
-% pause;
+% Complete warmUpExercise.m
+fprintf('Running warmUpExercise ... \n');
+fprintf('5x5 Identity Matrix: \n');
+warmUpExercise()
+
+fprintf('Program paused. Press enter to continue.\n');
+pause;
 
 
 %% ======================= Part 2: Plotting =======================
