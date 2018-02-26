@@ -43,21 +43,19 @@ disp(x2);
 
 
 
-perdic = X * transpose(all_theta);
+p = sigmoid(X * transpose(all_theta));
 
-% perdic = zeros(x1,1);
-[per1,per2]  = size(perdic);
-disp(perdic);
+perdic = zeroes(x1);
 for i=1:x1
     index = 1;
     val = 0;
-    for j=1:per2
-       if perdic(i,j)> val
-          val = perdic(i,j);
+    for j=1:t1
+       if p(i,j)>val
+          val = p(i,j);
           index = j;
        end
     end
-   p(i,1) = index;
+   perdic(i) = index;
     
 end
 

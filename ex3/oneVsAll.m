@@ -58,17 +58,16 @@ for i=1:num_labels
 
     % Run fmincg to obtain the optimal theta
     % This function will return theta and the cost 
-    [theta] = ...
-        fmincg (@(t)(lrCostFunction(t, X, (y == i), lambda)), ...
-                initial_theta, options);
+%     [theta] = ...
+%         fmincg (@(t)(lrCostFunction(t, X, (y == i), lambda)), ...
+%                 initial_theta, options);
 %    disp(theta);
 %    disp(length(X(1,:)));
 %    disp(length(X(:,1)));
-    per =  sigmoid(X * theta);
-    for j=1:n+1  
-        all_theta(i,j) = per(j); 
+%     per =  sigmoid(X * theta);
     
-    end
+        all_theta(i,:) =  fmincg (@(t)(lrCostFunction(t, X, (y == i), lambda)), ...
+                initial_theta, options);
     
     
 end

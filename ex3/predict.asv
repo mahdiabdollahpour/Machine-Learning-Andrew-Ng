@@ -22,24 +22,25 @@ p = zeros(size(X, 1), 1);
 %
 [x1,x2] = size(X);
 disp('///////////');
-% disp(Theta1);
+disp(Theta1);
 
 disp(X);
-a1 = [ones(m,1) X];
-a2 = sigmoid(a1 * Theta1');
+a1 = [X ones(x1,1)];
+a2 = sigmoid(Theta1 * transpose(a1));
 [a21,a22] = size(a2);
 
-a2 = [ones(size(a2,1), 1) a2];
-% disp(Theta2);
-% disp(aa2);
-a3 = sigmoid(a2 * Theta2');
-disp(a3);
+aa2 = [a2 ];
+disp(Theta2);
+disp(aa2);
+a3 = sigmoid(Theta2 * transpose(aa2));
+
+perd = transpose(a3);
 for i=1:m
-    [value , idx] = max(a3(i,:));
+    [value , idx] = max(perd(i,:));
     p(i) = idx;
 
 end
-disp(p);
+
 
 
 % =========================================================================

@@ -83,6 +83,14 @@ pause;
 %% ================ Part 3: Predict for One-Vs-All ================
 disp(all_theta);
 pred = predictOneVsAll(all_theta, X);
+% pred = transpose(pred);
+[y1,y2] = size(y);
+[p1,p2] = size(pred);
+disp(y1);
+disp(y2);
+disp(p1);
+disp(p2);
+
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
 
