@@ -60,7 +60,6 @@ pause;
 %  You should now implement the gradient for regularized linear 
 %  regression.
 %
-
 theta = [1 ; 1];
 [J, grad] = linearRegCostFunction([ones(m, 1) X], y, theta, 1);
 
